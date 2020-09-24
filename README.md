@@ -75,6 +75,15 @@ ip nat inside source static tcp 192.168.1.8 5020 interface GigabitEthernet0/0/0 
 
 ## Testing
 
+The Digial IO ports are exposed as four individual coils (CO) in Modbus with address 0x00 to 0x03 respectively mapped to ports 1 to 4:
+
+| Modbus Coil Address | DIO Port |
+|----------------|----------|
+| 0x00           |  1       |
+| 0x01           |  2       |
+| 0x02           |  3       |
+| 0x03           |  4       |
+
 As an illustration I have included two client applications to this repo that can be used from a computer.
 
 * `client.py` will query continuously the 4 Digital I/O ports and give the status (True or False). This is a read-only operation.
